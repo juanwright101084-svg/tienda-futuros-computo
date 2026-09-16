@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0A0E14;
+  --foreground: #EDEDED;
 }
 
 @theme inline {
@@ -12,15 +12,112 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html,
+body {
+  background: #0A0E14;
+  color: #EDEDED;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   TICKER
+   ========================= */
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-ticker {
+  animation: ticker-scroll 28s linear infinite;
+}
+
+/* =========================
+   GLOBE
+   ========================= */
+
+.globe-draw {
+  fill: none;
+  stroke: #4C9A6A;
+  stroke-width: 0.6;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-path 1.3s ease forwards;
+}
+
+.link-draw {
+  fill: none;
+  stroke: #E8A33D;
+  stroke-width: 0.5;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  opacity: 0.6;
+  animation: draw-path 0.8s ease forwards;
+}
+
+.node-pulse {
+  fill: #E8A33D;
+  opacity: 0;
+  animation: node-in 0.5s ease forwards;
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes node-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   SLOW ZOOM
+   ========================= */
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation: none;
+  }
+
+  .globe-draw,
+  .link-draw,
+  .node-pulse {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  .animate-slow-zoom {
+    animation: none;
+  }
 }
