@@ -42,7 +42,7 @@ Todas las tablas tienen Row Level Security (RLS) habilitado: lectura pública pa
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU-USUARIO/tienda-futuros-computo.git
+git clone https://github.com/juanwright101084-svg/tienda-futuros-computo.git
 cd tienda-futuros-computo
 ```
 
