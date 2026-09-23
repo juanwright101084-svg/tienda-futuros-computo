@@ -6,8 +6,8 @@ Construido con **Next.js 16 (App Router)** y **Supabase** como backend serverles
 
 ## Demo
 
-- **Sitio en producción:** _(agregar URL de Vercel aquí una vez desplegado)_
-- **Repositorio:** _(agregar URL de GitHub aquí)_
+- **Sitio en producción:tienda-futuros-computo.vercel.app
+- **Repositorio:https://github.com/juanwright101084-svg/tienda-futuros-computo
 
 ## Características
 
