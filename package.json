@@ -26,6 +26,7 @@
     "typescript": "^5"
   },
   "allowScripts": {
-    "unrs-resolver": "node postinstall.js"
+    "unrs-resolver": "node postinstall.js",
+    "unrs-resolver@1.12.2": true
   }
 }
